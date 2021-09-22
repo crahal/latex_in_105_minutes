@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./figures/cat_picture.jpg" width="200"/>&nbsp; &nbsp; &nbsp;<img src="./figures/cat_picture.jpg" width="200"/>&nbsp; &nbsp; &nbsp;<img src="./figures/cat_picture.jpg" width="200"/>&nbsp; &nbsp; &nbsp;<img src="./figures/cat_picture.jpg" width="200"/>
+  <img src="./figures/cat_picture.jpg" width="200"/>&nbsp; &nbsp; &nbsp;<img src="./figures/cat_picture.jpg" width="200"/>&nbsp; &nbsp; &nbsp;<img src="./figures/cat_picture.jpg" width="200"/>
 </p>
 
 ## :page_facing_up: A Short Introduction to LaTeX: or LaTeX in 105 Minutes  :page_facing_up:
