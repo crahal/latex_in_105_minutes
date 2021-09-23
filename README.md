@@ -16,4 +16,4 @@ The majority of the main content is found in `latex_in_105_minutes.tex`, which c
 
 ### Licensing: 
 
-This code is made available under a GNU GENERAL PUBLIC LICENSE 3.0.
+This code is made available under a CC-BY 4.0 License.
