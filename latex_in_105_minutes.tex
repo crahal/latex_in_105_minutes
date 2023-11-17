@@ -14,16 +14,16 @@
 \usepackage[dvipsnames]{xcolor}		%	Allows us to use fancier colours than the default
 \usepackage{graphicx}				%	Allows us incorporate graphics
 \usepackage{authblk} 				%	Allows us to customise our titlepage with the \affil{} block
-\usepackage{arabtex}					%	Allows the incorporation of arabic text
-\usepackage{utf8}					%	Allows utf-8 character set
+%\usepackage{arabtex}					%	Allows the incorporation of arabic text
+%\usepackage{utf8}					%	Allows utf-8 character set
 \usepackage[framemethod=TikZ]{mdframed}		%	Allow us to embed latex within latex
 \usepackage[top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,asymmetric]{geometry} % Allows customize page margins
-\usepackage{MnSymbol,wasysym}		%	Allows additional characters, such as smiley faces :)
+%\usepackage{MnSymbol,wasysym}		%	Allows additional characters, such as smiley faces :)
 \usepackage{subcaption}
 \usepackage{array}
 \usepackage{lipsum}
 \usepackage{biblatex} %Imports biblatex package
-\usepackage{spverbatim}
+%\usepackage{spverbatim}
 \addbibresource{supplementary/sample.bib} %Import the bibliography file
 
 \newenvironment{myenv}[1]
@@ -119,11 +119,11 @@ On 30 March, 1977, the diary of Knuth (a computer scientist at Stanford Universi
 \item Prevalent in all of academia, but more-so in technical subjects.
 \item Popular for its ability to elegantly handle equations, as we'll see.
 \item One of the main features of \LaTeX{} is the ability to write a range of complex characters.
-\item For example, maybe we want to write Arabic?
-\begin{center}
-\setcode{utf8}								%	Allows us to set encoding for utf8 characters
-\RL{السَلامُ عَليكم ورَحمةُ الله وبَركاته}
-\end{center}
+%\item For example, maybe we want to write Arabic?
+%\begin{center}
+%\setcode{utf8}								%	Allows us to set encoding for utf8 characters
+%\RL{السَلامُ عَليكم ورَحمةُ الله وبَركاته}
+%\end{center}
 
 \item The aim of today will be to get you towards being able to produce something like this document.
 \item However! We will not be discussing the technicalities of the compilation process or production of \texttt{.gz}, \texttt{.log} or \texttt{.aux} files.
@@ -132,7 +132,8 @@ On 30 March, 1977, the diary of Knuth (a computer scientist at Stanford Universi
 
 \subsubsection{Compared to MS Word:}
 
-\frownie{} Disadvantages of \LaTeX{}, compared to a \color{red} \href{http://en.wikipedia.org/wiki/WYSIWYG}{WYSIWYG}\footnote{Note! You can click this word! Created using the package \small \textbf{hyperref} \normalsize package.} \color{black} program such as MS Word:
+%\frownie{}
+Disadvantages of \LaTeX{}, compared to a \color{red} \href{http://en.wikipedia.org/wiki/WYSIWYG}{WYSIWYG}\footnote{Note! You can click this word! Created using the package \small \textbf{hyperref} \normalsize package.} \color{black} program such as MS Word:
 \begin{enumerate}							%	Allows us to make an enumerated list
 \item You are unable to see the results instantly.
 \item There is a learning curve as in any code language regarding the vocabulary of basic commands.
@@ -141,7 +142,8 @@ On 30 March, 1977, the diary of Knuth (a computer scientist at Stanford Universi
 \end{enumerate}
 
 \noindent
-\smiley{} However, as a \href{http://en.wikipedia.org/wiki/WYSIWYM}{\color{blue}WYSIWYM} language, the benefits are enormous:
+%\smiley{}
+However, as a \href{http://en.wikipedia.org/wiki/WYSIWYM}{\color{blue}WYSIWYM} language, the benefits are enormous:
 
 \begin{enumerate}
 \item Layouts, fonts, tables are consistent throughout.
@@ -197,7 +199,7 @@ As discussed at the start of the class, this is a workshop designed to help you 
 \item \href{https://ctan.org/pkg/first-latex-doc}{\color{red}A First LaTeX Document} is very similar in style to this workshop today: it takes you through writing a small document with text and math for the first time. 
 \item \href{https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/}{\color{red}Getting Started with LaTeX} is a primer with a focus on mathematical notation.
 \item \href{https://tobi.oetiker.ch/lshort/lshort.pdf}{\color{red}The Not So Short Introduction to \LaTeX{}} is what this course is named after, and is naturally a quintessential resource!
-\item \href{http://www.stdout.org/~winston/latex/}{\color{red}LaTeX Cheat Sheet}: because cheat sheats are cool.
+\item \href{http://www.stdout.org/~winston/latex/}{\color{red}LaTeX Cheat Sheet}: because cheat sheets are cool.
 \end{itemize}
 
 
@@ -247,7 +249,7 @@ As you've seen in this specific .tex file, the top of the file (before \texttt{$
 \documentclass[a4paper, 12pt]{article}
 \usepackage{hyperref}
 \begin{document}
-\href{youtube.com/watch?v=QH2-TGUlwu4}{The Best Thing on YouTube}
+\href{youtube.com/watch?v=NUYvbT6vTPs}{The Best Thing on YouTube}
 \end{document}
 \end{verbatim}
 \end{myenv}
@@ -408,18 +410,19 @@ Note here that I've actually styled the bullet points in some specific way! Ther
 
 \noindent
 Following this, lets \texttt{$\backslash$newpage} because we're going to move on to a whole different set of more technical issues next.
+\newpage
 
 \subsection{The Beauty of Mathematics in \LaTeX{}}
 \subsubsection{Loading Math Mode}
 
 As discussed above, one of the main motivations for using \LaTeX{} is just how elegantly it can typeset equations. In particular, you will likely want to load in two extension packages published by the American Mathematical Society: \texttt{amssymb} and \texttt{amsmath}. Thus, our preamble will need to include:
 
+%\documentclass{article}
 \begin{verbatim}
-\documentclass{article}
 \usepackage{amssymb,amsmath}
 \end{verbatim}
 
-The \texttt{amssymb} package might be omissible for documents whose math symbol usage is relatively modest. If we want to enter math mode and use `inline' formulas, we can use a dollar sign ($\$$) to enter and exit, such as this: $a=b+c$. To utilize an unnumbered equation in `display mode', we use something such as:
+\noindent The \texttt{amssymb} package might be omissible for documents whose math symbol usage is relatively modest. If we want to enter math mode and use `inline' formulas, we can use a dollar sign ($\$$) to enter and exit, such as this: $a=b+c$. To utilize an unnumbered equation in `display mode', we use something such as:
 
 \begin{verbatim}
 \begin{equation*}
@@ -456,7 +459,7 @@ a& =b+c-d\\
 \end{equation}\\
 
 \noindent
-Note how we've labelled this above equation, and we can cite it back here: \ref{aligned_example}. Note: this is the first time we've seen \texttt{$\backslash$label\{\}} and \texttt{$\backslash$ref\{\}}, but we'll also be labelling other things further down the document: sections, figures, tables, etc.
+Note how we've labelled this above equation, and we can cite it back here: \ref{aligned_example}. This is the first time we've seen \texttt{$\backslash$label\{\}} and \texttt{$\backslash$ref\{\}}, but we'll also be labelling other things further down the document: Sections, Figures, Tables, etc.
 
 \subsubsection{Styling Math Mode Content}
 
@@ -690,10 +693,13 @@ which sets the backend engine (e.g. \texttt{biber}, the style of the bibliograph
 Bibliography files must have the standard bibtex syntax. As a quick aside, getting this right takes some practice, and can be a common source of frustration. Fortunately (and it comes as recommended), you can download .bib entries directly form scientific resources such as Google Scholar. Lets see an example file below which cites \cite{silver2017mastering}:\\ \vspace{0.2in}
 
 \begin{minipage}{0.9\linewidth}
-\begin{spverbatim}
+\begin{verbatim}
 @article{silver2017mastering,
   title={Mastering the game of go without human knowledge},
-  author={Silver, David and Schrittwieser, Julian and Simonyan, Karen and Antonoglou, Ioannis and Huang, Aja and Guez, Arthur and Hubert, Thomas and Baker, Lucas and Lai, Matthew and Bolton, Adrian and others},
+  author={Silver, David and Schrittwieser, Julian and Simonyan, Karen 
+          and Antonoglou, Ioannis and Huang, Aja and Guez, Arthur and 
+          Hubert, Thomas and Baker, Lucas and Lai, Matthew and Bolton, 
+          Adrian and others},
   journal={nature},
   volume={550},
   number={7676},
@@ -701,8 +707,10 @@ Bibliography files must have the standard bibtex syntax. As a quick aside, getti
   year={2017},
   publisher={Nature Publishing Group}
 }
-\end{spverbatim}
+\end{verbatim}
 \end{minipage}\\ \vspace{0.2in}
+
+
 
 This file contains records in a special format; for instance, the first bibliographic reference is defined by the following types of information. \texttt{@article{...}}: This is the first line of an entry, telling us the type of entry (in this case an article). \texttt{silver2017mastering} is our identifier assigned to this entry; uniquely used to refer to this article within the document. \texttt{author} indicates the authors of the article, where several other comma-separated fields can also be added using the same syntax key=\{value\}, (e.g. volume, number, pages, year, etc). Finally, our reference section is shown below:\\
 
